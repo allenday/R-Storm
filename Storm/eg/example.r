@@ -1,7 +1,7 @@
 #!/usr/local/bin/r -i
 
 #when installed
-library(Storm)
+library(Storm,quietly=TRUE)
 
 #for now
 #source("Storm/R/Storm.R");
