@@ -1,10 +1,10 @@
 #!/usr/local/bin/r -i
 
 #when installed
-#library(Storm)
+library(Storm)
 
 #for now
-source("Storm/R/Storm.R");
+#source("Storm/R/Storm.R");
 
 #create a Storm object
 storm = Storm$new();

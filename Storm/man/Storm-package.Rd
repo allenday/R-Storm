@@ -61,29 +61,16 @@ Storm Multi-Language Protocol - \url{https://github.com/nathanmarz/storm/wiki/Mu
 % ~~ \code{\link[<pkg>:<pkg>-package]{<pkg>}} ~~
 }
 \examples{
-#proton:R allenday$ cat Storm/eg/example.txt 
-#{
-#  "id": "-6955786537413359385",
-#  "comp": "1",
-#  "stream": "1",
-#  "task": 9,
-#  "tuple": ["snow white and the seven dwarfs", "field2", 3, 4]
-#}
-#end
-
-#proton:R allenday cat Storm/eg/example.r 
-#!/usr/local/bin/r -i
-
-#when installed
 #library(Storm)
-
-#for now
-#source("Storm/R/Storm.R");
+#source("Storm/R/Storm.R")
 
 #create a Storm object
 storm = Storm$new();
+
 #by default it has a handler that logs that the tuple was skipped.
-#let's replace it that with something more useful:
+#let's replace it that with something more interesting and equally
+#useless.
+
 storm$lambda = function(s) {
   #argument 's' is the Storm object.
 
@@ -116,6 +103,15 @@ storm$lambda = function(s) {
 #enter the main tuple-processing loop.
 storm$run();
 
+#proton:R allenday$ cat Storm/eg/example.txt 
+#{
+#  "id": "-6955786537413359385",
+#  "comp": "1",
+#  "stream": "1",
+#  "task": 9,
+#  "tuple": ["snow white and the seven dwarfs", "field2", 3, 4]
+#}
+#end
 #proton:R allenday$ cat Storm/eg/example.txt | Storm/eg/example.r 
 #{
 #  "command": "ack",
