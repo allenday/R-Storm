@@ -20,7 +20,7 @@ Tuple = setRefClass("Tuple",
                       #All tuples used to create field @tuple.out
                       anchors="vector"
                       
-                      #              parse="function"
+                      #parse="function"
                     ));
 
 Tuple$methods(
@@ -44,11 +44,22 @@ Storm = setRefClass("Storm",
                       lambda="function"
                     )
 );
-Storm$lambda = function(s) {s$log(c("skipping tuple id='",s$tuple$id,"'"));};
+
+#Storm$methods(
+#  lambda = function(s=Storm) {
+#    s$log(c("skipping tuple id='",s$tuple$id,"'"));
+#  }
+#);
+#Storm$lambda = function(s) {
+#  s$log(c("skipping tuple id='",s$tuple$id,"'"));
+#};
 
 Storm$methods(
   initialize = function() {
-    .self$lambda = Storm$lambda;
+    #.self$lambda = Storm$lambda;
+    .self$lambda = function(s) {
+      s$log(c("skipping tuple id='",s$tuple$id,"'"));
+    };
     .self;
   }
 );
@@ -101,8 +112,8 @@ Storm$methods(
 
 Storm$methods(
   process_tuple = function(json=character) {
-    #    print(Tuple);
-    #    tuple = getRefClass("Tuple")$new();
+    #print(Tuple);
+    #tuple = getRefClass("Tuple")$new();
     tt = Tuple$new();
     tt$parse(json);
     .self$tuple = tt;
