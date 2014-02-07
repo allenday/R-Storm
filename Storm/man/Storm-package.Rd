@@ -57,9 +57,9 @@ Storm Multi-Language Protocol - \url{https://github.com/nathanmarz/storm/wiki/Mu
 }
 \keyword{ storm }
 \keyword{ hadoop }
-\seealso{
+%\seealso{
 % ~~ \code{\link[<pkg>:<pkg>-package]{<pkg>}} ~~
-}
+%}
 \examples{
 #library(Storm)
 #source("Storm/R/Storm.R")
