@@ -1,4 +1,6 @@
-# Write Storm Bolts in R using the Storm Multi-Language Protocol - *R Support for Apache Storm Multilang Protocol*
+# Write Storm Bolts in R using the Storm Multi-Language Protocol 
+
+*R Support for Apache Storm Multilang Protocol*
 
 ## Description
 
