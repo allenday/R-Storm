@@ -41,9 +41,9 @@ messages, such as failures and diagnostic messages.
 
 To use this extension, briefly:
 
-1. create a new Storm object.
-2. define a function that can process and emit Tuple objects.
-3. call the run() method on the Storm object.
+1. create a new Storm object.\cr
+2. define a function that can process and emit Tuple objects.\cr
+3. call the run() method on the Storm object.\cr
 
 A detailed example is given in the examples section.
 }
