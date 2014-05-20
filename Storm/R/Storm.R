@@ -106,6 +106,7 @@ Storm$methods(
       t = fromJSON(json);
     }
     # we assume that it is a tuple if the "tuple" field is not empty.
+    if (is.list(t)) {
     if (!is.null(t$tuple)) {
       .self$process_tuple(json);
     }
@@ -118,6 +119,7 @@ Storm$methods(
     else {
 #TODO      .self$log(paste("unrecognized JSON:\n'",json,"'\n",sep=""));
       #stop("unrecognized JSON: ",json);
+    }
     }
   }
 );
