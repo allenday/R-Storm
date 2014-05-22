@@ -9,9 +9,9 @@
 Write Storm Bolts in R using the Storm Multi-Language Protocol.
 }
 \description{
-Storm is a distributed realtime computation system. Similar to how Hadoop
+Storm is a distributed real-time computation system. Similar to how Hadoop
 provides a set of general primitives for doing batch processing, Storm provides
-a set of general primitives for doing realtime computation.
+a set of general primitives for doing real-time computation.
 
 Storm includes a ``Multi-Language'' (or ``Multilang'') Protocol to allow
 implementation of Bolts and Spouts in languages other than Java.  This R
