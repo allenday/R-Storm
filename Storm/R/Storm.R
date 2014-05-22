@@ -212,7 +212,8 @@ Storm$methods(
       #https://github.com/nathanmarz/storm/wiki/Multilang-protocol
       #'"task": "',tuple$task,'", ',
 
-      '"tuple": ',t.prefix,toJSON(tuple$output),t.suffix,
+      #'"tuple": ',t.prefix,toJSON(tuple$output),t.suffix,
+      '"tuple": ',toJSON(tuple$output),
       '}\n',
       'end\n'
     ),sep="");
