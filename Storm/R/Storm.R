@@ -14,9 +14,9 @@ Tuple = setRefClass("Tuple",
                       #XXX integer?
                       task="character",
                       #All input values in this tuple
-                      input="vector",
+                      input="list",
                       #All output values for this tuple
-                      output="vector",
+                      output="list",
                       #All tuples used to create field @tuple.out
                       anchors="vector"
                       
@@ -30,8 +30,8 @@ Tuple$methods(
     .self$comp=as.character(t$comp);
     .self$stream=as.character(t$stream);
     .self$task=as.character(t$task);
-    .self$input=unlist(t$tuple);
-    .self$output=vector(mode="character");
+    .self$input=t$tuple;
+    .self$output=list(output="output");
     .self$anchors=vector(mode="character");
     .self;
   }
