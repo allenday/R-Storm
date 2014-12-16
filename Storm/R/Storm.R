@@ -155,7 +155,7 @@ Storm$methods(
 );
 Storm$methods(
   ack = function(tuple=Tuple) {
-    x.stdout = file("stdout");
+    #x.stdout = file("stdout");
     cat(c(
       '{\n',
       '\t"command": "ack",\n',
@@ -163,8 +163,8 @@ Storm$methods(
       '}\n',
       'end\n'
     ),sep="",file=x.stdout);
-    flush(x.stdout);
-    close(x.stdout);
+    #flush(x.stdout);
+    #close(x.stdout);
   }
 );
 Storm$methods(
