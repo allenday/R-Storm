@@ -1,3 +1,4 @@
-import("rjson")
 import("methods")
+import("permute")
+import("rjson")
 export(Storm, Tuple)

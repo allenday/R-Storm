@@ -7,7 +7,7 @@ Author: Allen Day
 Maintainer: Allen Day <allenday@allenday.com>
 License: GPL (>= 2)
 LazyLoad: yes
-Depends: R (>= 2.1.0), methods, rjson
+Depends: R (>= 2.1.0), methods, permute, rjson
 Description: Storm is a distributed real-time computation system. Similar to how
  Hadoop provides a set of general primitives for doing batch processing, Storm
  provides a set of general primitives for doing real-time computation.
