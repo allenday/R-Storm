@@ -1,7 +1,7 @@
 Package: Storm
 Type: Package
-Version: 1.1
-Date: 2014-05-22
+Version: 1.2
+Date: 2014-12-25
 Title: Write Storm Bolts in R using the Storm Multi-Language Protocol.
 Author: Allen Day
 Maintainer: Allen Day <allenday@allenday.com>

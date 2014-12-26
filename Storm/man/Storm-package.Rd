@@ -23,8 +23,8 @@ communications plumbing.
 \tabular{ll}{
 Package: \tab Storm\cr
 Type: \tab Package\cr
-Version: \tab 1.0\cr
-Date: \tab 2012-08-14\cr
+Version: \tab 1.2\cr
+Date: \tab 2012-12-25\cr
 License: \tab GPL version 2 or newer\cr
 LazyLoad: \tab yes\cr
 }

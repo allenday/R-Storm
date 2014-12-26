@@ -71,12 +71,8 @@ Storm$methods(
     x.stdin = file("stdin");
     open(x.stdin);
 
-    #x.stdout = file("stdout");
-    #cat(paste('{"pid": ',Sys.getpid(),'}',"\n",sep=""),file=x.stdout);
     cat(paste('{"pid": ',Sys.getpid(),'}',"\nend\n",sep=""));
     cat('{"command": "emit", "anchors": [], "tuple": ["bolt initializing"]}\nend\n');
-    #flush(x.stdout);
-    #close(x.stdout);
 
     while (TRUE) {
       rl = as.character(readLines(con=x.stdin,n=1,warn=FALSE));
@@ -155,16 +151,13 @@ Storm$methods(
 );
 Storm$methods(
   ack = function(tuple=Tuple) {
-    #x.stdout = file("stdout");
     cat(c(
       '{\n',
       '\t"command": "ack",\n',
       '\t"id": "',tuple$id,'"\n',
       '}\n',
       'end\n'
-    ),sep="",file=x.stdout);
-    #flush(x.stdout);
-    #close(x.stdout);
+    ),sep="");
   }
 );
 Storm$methods(
