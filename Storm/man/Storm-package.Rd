@@ -5,9 +5,7 @@
 \alias{Storm}
 \alias{Tuple}
 \docType{package}
-\title{
-Write Storm Bolts in R using the Storm Multi-Language Protocol.
-}
+\title{Write Storm Bolts in R using the Storm Multi-Language Protocol.}
 \description{
 Storm is a distributed real-time computation system. Similar to how Hadoop
 provides a set of general primitives for doing batch processing, Storm provides
