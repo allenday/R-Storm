@@ -30,7 +30,7 @@ Tuple$methods(
     .self$comp=as.character(t$comp);
     .self$stream=as.character(t$stream);
     .self$task=as.character(t$task);
-    .self$input=t$tuple;
+    .self$input=as.list(t$tuple);
     .self$output=vector(mode="character");
     .self$anchors=vector(mode="character");
     .self;
@@ -72,7 +72,7 @@ Storm$methods(
     open(x.stdin);
 
     cat(paste('{"pid": ',Sys.getpid(),'}',"\nend\n",sep=""));
-    cat('{"command": "emit", "anchors": [], "tuple": ["bolt initializing"]}\nend\n');
+    #cat('{"command": "emit", "anchors": [], "tuple": ["bolt initializing"]}\nend\n');
 
     while (TRUE) {
       rl = as.character(readLines(con=x.stdin,n=1,warn=FALSE));
@@ -127,8 +127,12 @@ Storm$methods(
     tt = Tuple$new();
     tt$parse(json);
     .self$tuple = tt;
-    .self$lambda(.self);      
-    #    print(.self$input.tuple);
+    if(tt$stream == "__heartbeat") {
+      .self$sync();
+    } else {
+      .self$lambda(.self);      
+      # print(.self$input.tuple);
+    }
   }
 );
 Storm$methods(
@@ -149,6 +153,18 @@ Storm$methods(
     ),sep="");
   }
 );
+
+Storm$methods(
+  sync = function() {
+    cat(c(
+      '{',
+      '"command": "sync"',
+      '}\n',
+      'end\n'
+    ),sep="");
+  }
+);
+
 Storm$methods(
   ack = function(tuple=Tuple) {
     cat(c(
